@@ -45,13 +45,11 @@ jobs:
       run: |
         echo "Exécution des tests générés (tests/generated/)..."
         pytest tests/generated/ -v --html=reports/generated-report.html --self-contained-html
-      continue-on-error: true 
       
     - name: Run Visual Tests
       run: |
         echo "Exécution des tests visuels (tests/visual/)..."
         pytest tests/visual/ -v --html=reports/visual-report.html --self-contained-html
-      continue-on-error: true
       
     - name: Run All Tests for Allure Data Collection
       if: always()
